@@ -1,7 +1,7 @@
 {
   "name": "resty",
   "version": "0.1.0",
-  "homepage": "/RESTy",
+  "homepage": "/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -15,10 +15,9 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "CHOKIDAR_USEPOLLING=1 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "wsl": "CHOKIDAR_USEPOLLING=1 npm start",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
