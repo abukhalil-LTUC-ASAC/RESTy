@@ -1,0 +1,28 @@
+footer {
+  
+  background-color: rgb(212, 182, 182);
+
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+footer > div {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 10vh;
+  padding: 2vh;
+}
+
+@media all and (min-width: 768px) and (max-width: 959px) {
+  footer {
+    background-color: rgb(182, 120, 120);
+  }
+}
+
+@media all and (min-width: 960px) {
+  footer {
+    background-color: rgb(211, 97, 97);
+  }
+}
