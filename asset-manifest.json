@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/repo-name/static/css/main.06d518e0.chunk.css",
+    "main.js": "/repo-name/static/js/main.2aeb52a2.chunk.js",
+    "main.js.map": "/repo-name/static/js/main.2aeb52a2.chunk.js.map",
+    "runtime-main.js": "/repo-name/static/js/runtime-main.b94f04ef.js",
+    "runtime-main.js.map": "/repo-name/static/js/runtime-main.b94f04ef.js.map",
+    "static/js/2.3cb76820.chunk.js": "/repo-name/static/js/2.3cb76820.chunk.js",
+    "static/js/2.3cb76820.chunk.js.map": "/repo-name/static/js/2.3cb76820.chunk.js.map",
+    "index.html": "/repo-name/index.html",
+    "precache-manifest.fe5b6b4e66bc467997716e7ac12a25a1.js": "/repo-name/precache-manifest.fe5b6b4e66bc467997716e7ac12a25a1.js",
+    "service-worker.js": "/repo-name/service-worker.js",
+    "static/css/main.06d518e0.chunk.css.map": "/repo-name/static/css/main.06d518e0.chunk.css.map",
+    "static/js/2.3cb76820.chunk.js.LICENSE.txt": "/repo-name/static/js/2.3cb76820.chunk.js.LICENSE.txt",
+    "static/media/header.scss": "/repo-name/static/media/SansitaSwashed-Regular.7cba38e7.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b94f04ef.js",
+    "static/js/2.3cb76820.chunk.js",
+    "static/css/main.06d518e0.chunk.css",
+    "static/js/main.2aeb52a2.chunk.js"
+  ]
+}
