@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './form.scss'
+import './form.scss';
 
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {url: '', method: '', result: ''};
+    this.state = {url: '', method: 'GET', result: ''};
 
     this.onMethodChoice = this.onMethodChoice.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -19,9 +19,27 @@ class Form extends Component {
     this.setState({url: event.target.value});
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
-    this.setState({result: `${this.state.method}: ${this.state.url}`});
+
+    // loader will show true 
+    this.props.toggleLoading();
+    console.log(this.state.url);
+      if (this.state.method === 'GET') {
+        let raw = await fetch(this.state.url)
+        const contentType = raw.headers.get("content-type");
+
+        if (contentType && contentType.indexOf("application/json") !== -1) {
+          // process your JSON data further and send data to the parent
+          let data = await raw.json();
+          this.props.handler(data);
+        } else {
+          throw new Error('Invalid Response');
+        }
+
+      // toggle loader back to false 
+      this.props.toggleLoading();
+    }
   }
 
   render() {
@@ -29,7 +47,7 @@ class Form extends Component {
       <>
         <form onSubmit={this.handleSubmit}>
           <div onChange={this.onMethodChoice}>
-            <input type="radio" value="GET" name="method" /> GET
+            <input type="radio" value="GET" checked={true} name="method" /> GET
             <input type="radio" value="POST" name="method" /> POST
             <input type="radio" value="UPDATE" name="method" /> UPDATE
             <input type="radio" value="DELETE" name="method" /> DELETE
@@ -40,9 +58,6 @@ class Form extends Component {
           </label>
           <input type="submit" value="Submit" />
           <br/>
-          <div>
-            {this.state.result}
-          </div>
         </form>
       </>
     );
