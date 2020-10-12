@@ -15,9 +15,10 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "CHOKIDAR_USEPOLLING=1 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "wsl": "CHOKIDAR_USEPOLLING=1 npm start",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
