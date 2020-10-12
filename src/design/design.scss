@@ -9,7 +9,7 @@ $color: rgb(224, 203, 203);
 }
 
 #root {
-  height: 100vh;
+  max-height: 100vh;
   background: $color;
 	display: grid;
 	grid-template-columns: 1fr 8fr 1fr;
@@ -19,7 +19,8 @@ $color: rgb(224, 203, 203);
 main {
   
   background-color: rgb(131, 112, 112);
-
+  overflow-y: scroll;
+  
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
