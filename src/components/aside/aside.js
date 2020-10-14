@@ -1,31 +1,55 @@
-import React, { Component, useState } from 'react';
-import './aside.scss'
+import React from 'react';
+import './aside.scss';
+import List from './list/list';
 
-function Aside(props) {
-  const [results, setResults] = useState(JSON.parse(localStorage.getItem('API History')) || {});
+class Aside extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lists: [],
+    };
+  }
 
-  React.useEffect(() => {
-    window.addEventListener('storage', () => {
-      // When local storage changes, update the results list
-      setResults(JSON.parse(localStorage.getItem('API History')) || {});
-      console.log(results);
+  componentWillReceiveProps(props) {
+    this.updateForm();
+    console.log('Changed List to: ', this.state.lists)
+  }
+
+  componentDidMount() {
+    this.updateForm();
+    console.log('Added List')
+  }
+
+  updateForm() {
+    this.setState({ 
+      lists: Object.keys(this.props.history).map((key) => (
+      <li key={key} onClick={() => this.props.fetch(this.props.history[key])}>
+        <div className="method">
+          {this.props.history[key].method}
+        </div>
+        <div className="url">
+          {this.props.history[key].url}
+        </div>
+        <div className="body">
+          {this.props.history[key].params}
+        </div>
+      </li>))
     });
-  });
+  }
 
-    console.log(results);
-
-    let items = () => results.map((item, i)=> <li key={i} >{item.name}</li>);
+  render() {
     return (
       <aside>
         <div className="title">
           Aside
         </div>
         <hr/>
-        <ul className="list">
-          {items}
-        </ul>
+        <List>
+          {this.state.lists}
+        </List>
       </aside>
     )
+  }
 }
 
 export default Aside;

@@ -2,7 +2,6 @@ import superagent from 'superagent';
 import isUrl from 'validator/lib/isURL';
 
 export async function CRUD(url, method, params, id) {
-  let parsed = parseParams(params);
   let response = '';
 
   // if(isUrl(url)){
@@ -11,10 +10,10 @@ export async function CRUD(url, method, params, id) {
         response = await getUrl(url);
         break;
       case 'POST':
-        response = await postUrl(url, parsed);
+        response = await postUrl(url, params);
         break;
       case 'UPDATE':
-        response = await updateUrl(url, parsed, id);
+        response = await updateUrl(url, params, id);
         break;
       case 'DELETE':
         response = await deleteUrl(url, id);
@@ -54,12 +53,14 @@ async function getUrl(url) {
 }
 
 async function postUrl(url, params) {
-  let response = await superagent.post(url).send(params);
+  let parsed = parseParams(params);
+  let response = await superagent.post(url).send(parsed);
   return response;
 }
 
 async function updateUrl(url, params, id) {
-  let response = await superagent.put(url + `${id}`).send(params);
+  let parsed = parseParams(params);
+  let response = await superagent.put(url + `${id}`).send(parsed);
   return response;
 }
 
