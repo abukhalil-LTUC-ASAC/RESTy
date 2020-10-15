@@ -12,14 +12,14 @@ $color: rgb(224, 203, 203);
   max-height: 100vh;
   background: $color;
 	display: grid;
-	grid-template-columns: 1fr 8fr 1fr;
+	grid-template-columns: 3fr 8fr 1fr;
   grid-template-rows: 1fr 8fr 1fr;
 }
 
 main {
   
   background-color: rgb(131, 112, 112);
-  overflow-y: scroll;
+  overflow-y: auto;
   
   grid-column-start: 2;
   grid-column-end: 3;
@@ -39,7 +39,7 @@ main {
 
 @media all and (min-width: 960px) {
   #root {
-		grid-template-columns: 1fr 8fr 1fr;
+		grid-template-columns: 3fr 8fr 1fr;
     grid-template-rows: 1fr 8fr 1fr;
 
   }

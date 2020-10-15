@@ -1,0 +1,47 @@
+.overlay {
+  position: fixed; /* Positioning and size */
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+
+  display: block;
+}
+
+// .img-loading {
+//   display: block;
+//   position: fixed; /* positioning in center of page */
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: rgba(128, 128, 128, 0);
+
+// }
+
+// .loading{
+//   opacity:1;
+
+//   background-color: rgba(0, 0, 0, 0.397);
+//   transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s, background-color 0.5s;
+// }
+// .notLoading{
+//   opacity:0;
+
+//   background-color: rgba(0, 0, 0, 0);
+//   transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s, background-color 0.5s;
+// }
+
+.show {
+  opacity:1;
+  top: 0;
+  // display: block;
+  background-color: rgba(128,128,128,0.5); /* color */
+  transition: opacity 0.5s 0.5s, background-color 0.5s;
+}
+
+.hide {
+  height: 0;
+  opacity:0;
+  top: -999px;
+  background-color: rgba(128, 128, 128, 0); /* color */
+  transition: opacity 0.5s, background-color 0.5s, top 1s linear;
+}
